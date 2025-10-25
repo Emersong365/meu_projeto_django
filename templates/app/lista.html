@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Lista de Produtos{% endblock %}
+
+{% block content %}
+<h2>Produtos Cadastrados</h2>
+
+{% if produtos %}
+    <ul>
+    {% for produto in produtos %}
+        <li>{{ produto.nome }} — R$ {{ produto.preco }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Nenhum produto cadastrado.</p>
+{% endif %}
+{% endblock %}
